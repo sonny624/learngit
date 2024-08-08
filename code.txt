@@ -10,3 +10,12 @@ def euler(f,y0,x0,h,n):
         y.append(y1)
         
     return x,y
+    
+def f(x,y):
+    return py.cos(x)
+y0=1
+x0=0
+h=0.1
+n=50
+
+x,y=euler(f, y0, x0, h, n)
