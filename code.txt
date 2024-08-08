@@ -1,2 +1,12 @@
 import numpy as py
 import matplotlib.pyplot as plt
+def euler(f,y0,x0,h,n):
+    x=[x0]
+    y=[y0]
+    y1=y0
+    for _ in range(n):
+        y1=y1+h*f(x[-1],y1)
+        x.append(x[-1]+h)
+        y.append(y1)
+        
+    return x,y
