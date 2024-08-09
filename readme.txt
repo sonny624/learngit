@@ -1,6 +1,21 @@
-Git is a distributed version control system
-Git is free software distributed under the GPL
-Git has a mutable index called stage
-Git tracks changes of files
-Creating a new branch is quick and simple
+import numpy as py
+import matplotlib.pyplot as plt
+
+def euler_method(f,y0,x0,x1,n):
+    h=(x1-x0) / n
+    x2=[x0]
+    y2=[y0]
+    x=x0
+    y=y0
+    
+    for i in range(n):
+        x=x+h
+        y=y+h*f(x,y)
+        x2.append(x)
+        y2.append(y)
+        
+    return x2,y2
+    
+    
+
 
