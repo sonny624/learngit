@@ -1,0 +1,30 @@
+import numpy as py
+import matplotlib.pyplot as plt
+def euler(f,y0,x0,h,n):
+    x=[x0]
+    y=[y0]
+    y1=y0
+    for _ in range(n):
+        y1=y1+h*f(x[-1],y1)
+        x.append(x[-1]+h)
+        y.append(y1)
+        
+    return x,y
+    
+def f(x,y):
+    return py.cos(x)
+y0=1
+x0=0
+h=0.1
+n=50
+
+x,y=euler(f, y0, x0, h, n)
+
+for x2,y2 in zip(x,y):
+    print(f"x={x2:.2f},y={y2:.5f}")
+plt.plot(x, y, marker='o')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Euler Method Solution')
+plt.grid(True)
+plt.savefig('myplot4.png')

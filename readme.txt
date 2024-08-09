@@ -1,3 +1,21 @@
+import numpy as py
+import matplotlib.pyplot as plt
+
+def euler_method(f,y0,x0,x1,n):
+    h=(x1-x0) / n
+    x2=[x0]
+    y2=[y0]
+    x=x0
+    y=y0
+    
+    for i in range(n):
+        x=x+h
+        y=y+h*f(x,y)
+        x2.append(x)
+        y2.append(y)
+        
+    return x2,y2
+    
 def f(x,y):
     return py.cos(x)
     
@@ -15,5 +33,7 @@ def plot(f,y0,x0,x1,n):
     n=100
     y0=1
     
-    plot(f,y0,x0,x1,n)
+    plot(f,y0,x0,x1,n)  
+
+
 
